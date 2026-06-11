@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Brief — Saga Bevcrafts</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #1B2A4A;
+  --steel:   #4A7FA5;
+  --steel-lt:#6B9DBF;
+  --ice:     #D6E8F5;
+  --bg:      #F4F7FA;
+  --white:   #FFFFFF;
+  --border:  #C8D8E8;
+  --muted:   #7A90A8;
+  --ink:     #1B2A4A;
+  --chip-bg: #EBF3FA;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.hero-deco {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .12;
+}
+.hero-deco-1 {
+  width: 320px; height: 320px;
+  background: var(--steel);
+  top: -80px; right: -60px;
+}
+.hero-deco-2 {
+  width: 180px; height: 180px;
+  background: var(--steel-lt);
+  bottom: -40px; left: -30px;
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 720px; margin: 0 auto;
+  padding: 48px 28px 40px;
+  display: flex; align-items: center; gap: 28px;
+}
+.logo-block { flex-shrink: 0; }
+.logo-icon {
+  width: 64px; height: 64px;
+  background: rgba(255,255,255,.08);
+  border: 1.5px solid rgba(255,255,255,.2);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-icon svg { width: 38px; height: 38px; }
+.hero-text { flex: 1; }
+.hero-overline {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 3.5px; text-transform: uppercase;
+  color: var(--steel-lt); margin-bottom: 8px;
+}
+.hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 4vw, 34px);
+  font-weight: 700; color: #fff;
+  line-height: 1.15; margin-bottom: 6px;
+}
+.hero-title em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic; font-weight: 400;
+  color: var(--ice);
+}
+.hero-sub {
+  font-size: 13px; color: rgba(255,255,255,.5);
+  line-height: 1.6; font-weight: 300;
+}
+.hero-stripe {
+  height: 4px;
+  background: linear-gradient(90deg, var(--steel) 0%, var(--steel-lt) 50%, transparent 100%);
+}
+
+/* ── PROGRESS ── */
+.prog-wrap {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(27,42,74,.06);
+}
+.prog-inner {
+  max-width: 720px; margin: 0 auto;
+  padding: 10px 28px;
+  display: flex; align-items: center; gap: 16px;
+}
+.prog-label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); white-space: nowrap; min-width: 160px;
+}
+.bar-track {
+  flex: 1; height: 4px;
+  background: var(--ice); border-radius: 2px; overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--navy), var(--steel));
+  border-radius: 2px; transition: width .4s ease; width: 0%;
+}
+
+/* ── WRAP ── */
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 72px; }
+
+/* ── SECTION ── */
+.section {
+  margin-top: 32px;
+  background: var(--white);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(27,42,74,.05);
+  opacity: 0; transform: translateY(14px);
+  animation: up .45s ease forwards;
+}
+@keyframes up { to { opacity:1; transform:translateY(0); } }
+.section:nth-child(1){animation-delay:.08s}
+.section:nth-child(2){animation-delay:.15s}
+.section:nth-child(3){animation-delay:.22s}
+.section:nth-child(4){animation-delay:.29s}
+.section:nth-child(5){animation-delay:.36s}
+.section:nth-child(6){animation-delay:.43s}
+
+.sec-head {
+  display: flex; align-items: center; gap: 0;
+  background: linear-gradient(135deg, var(--navy) 0%, #243d65 100%);
+  padding: 18px 24px;
+}
+.sec-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px; font-weight: 700;
+  color: rgba(255,255,255,.18);
+  line-height: 1; margin-right: 16px;
+  min-width: 28px;
+}
+.sec-info { flex: 1; }
+.sec-title {
+  font-size: 15px; font-weight: 600;
+  color: #fff; letter-spacing: .3px;
+}
+.sec-sub {
+  font-size: 12px; color: rgba(255,255,255,.45);
+  font-weight: 300; margin-top: 2px;
+}
+.sec-tag {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  background: rgba(255,255,255,.1); color: rgba(255,255,255,.5);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 100px; padding: 3px 10px;
+}
+
+.sec-body { padding: 24px; }
+
+/* ── FIELD ── */
+.field { margin-bottom: 22px; }
+.field:last-child { margin-bottom: 0; }
+
+.fl { display: block; font-size: 13px; font-weight: 600;
+      color: var(--navy); margin-bottom: 5px; }
+.fl .req { color: var(--steel); margin-left: 3px; }
+.fh { font-size: 12px; color: var(--muted); margin-bottom: 9px;
+      line-height: 1.55; font-weight: 300; }
+
+input[type="text"], textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; color: var(--ink); font-weight: 400;
+  outline: none; transition: border-color .2s, box-shadow .2s, background .2s;
+  resize: vertical;
+}
+input[type="text"]:focus, textarea:focus {
+  border-color: var(--steel);
+  background: var(--white);
+  box-shadow: 0 0 0 3px rgba(74,127,165,.12);
+}
+input::placeholder, textarea::placeholder {
+  color: #B0C0D0; font-weight: 300; font-style: italic;
+}
+
+/* ── CHIPS ── */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip input { display: none; }
+.chip label {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 15px; border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--chip-bg);
+  font-size: 13px; color: var(--muted); font-weight: 400;
+  cursor: pointer; transition: all .18s; user-select: none;
+  line-height: 1;
+}
+.chip label::before {
+  content: '';
+  width: 14px; height: 14px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  display: inline-block;
+  transition: all .18s;
+  flex-shrink: 0;
+  background: var(--white);
+}
+.chip input[type="radio"] + label::before { border-radius: 50%; }
+.chip input:checked + label {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #fff; font-weight: 500;
+}
+.chip input:checked + label::before {
+  background: var(--steel-lt);
+  border-color: var(--steel-lt);
+}
+.chip label:hover:not(.chip input:checked + label) {
+  border-color: var(--steel);
+  color: var(--navy);
+  background: var(--ice);
+}
+
+.divider { height: 1px; background: var(--border); margin: 4px 0 22px; opacity: .5; }
+
+/* ── SUBMIT ── */
+.submit-area { margin-top: 36px; text-align: center; }
+.btn-main {
+  background: var(--navy); color: var(--white);
+  border: none; border-radius: 12px;
+  padding: 16px 52px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: background .2s, transform .1s, box-shadow .2s;
+  box-shadow: 0 6px 24px rgba(27,42,74,.22);
+  position: relative; overflow: hidden;
+}
+.btn-main::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    rgba(74,127,165,.3) 0%, transparent 60%);
+}
+.btn-main:hover { background: #243d65; transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(27,42,74,.3); }
+.btn-main:active { transform: translateY(0); }
+.btn-note {
+  font-size: 12px; color: var(--muted); margin-top: 10px;
+}
+.btn-note strong { color: var(--steel); }
+
+/* ── RESULT ── */
+#result-panel {
+  display: none; margin-top: 28px;
+  background: var(--navy); border-radius: 16px;
+  padding: 28px; color: #fff;
+  box-shadow: 0 8px 32px rgba(27,42,74,.3);
+}
+#result-panel h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; color: var(--ice);
+  margin-bottom: 16px; font-weight: 700;
+}
+#result-text {
+  font-size: 13px; line-height: 1.85;
+  white-space: pre-wrap; color: rgba(255,255,255,.75);
+  max-height: 340px; overflow-y: auto;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 10px; padding: 18px;
+  background: rgba(255,255,255,.04);
+  font-family: 'Outfit', monospace; font-weight: 300;
+}
+.result-actions { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.btn-copy {
+  background: var(--steel); color: #fff;
+  border: none; border-radius: 10px;
+  padding: 11px 28px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: opacity .2s;
+}
+.btn-copy:hover { opacity: .85; }
+.result-note {
+  font-size: 12px; color: rgba(255,255,255,.4);
+  align-self: center;
+  line-height: 1.5;
+}
+.result-note strong { color: rgba(255,255,255,.65); }
+
+/* ── FOOTER ── */
+.footer {
+  max-width: 720px; margin: 0 auto;
+  padding: 28px 24px 40px;
+  display: flex; align-items: center; gap: 20px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.footer-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--navy); letter-spacing: -.3px;
+}
+.footer-logo span { color: var(--steel); }
+.footer-contacts {
+  flex: 1;
+  font-size: 12px; color: var(--muted); line-height: 1.8; font-weight: 300;
+}
+.footer-contacts a { color: var(--steel); text-decoration: none; }
+
+/* ── MOBILE ── */
+@media (max-width: 500px) {
+  .hero-inner { flex-direction: column; gap: 16px; align-items: flex-start; }
+  .chips { gap: 6px; }
+  .chip label { font-size: 12px; padding: 7px 12px; }
+  .sec-body { padding: 18px; }
+  .prog-inner { gap: 10px; }
+  .prog-label { font-size: 10px; min-width: 120px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-deco hero-deco-1"></div>
+  <div class="hero-deco hero-deco-2"></div>
+  <div class="hero-inner">
+    <div class="logo-block">
+      <div class="logo-icon">
+        <!-- Flask icon matching Saga logo -->
+        <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 6 L14 18 L6 30 Q5 32 7 33 L31 33 Q33 32 32 30 L24 18 L24 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M11 6 L27 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 27 L30 27" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="13" cy="29" r="1.5" fill="rgba(255,255,255,0.5)"/>
+          <circle cx="20" cy="27.5" r="1" fill="rgba(255,255,255,0.35)"/>
+          <circle cx="25" cy="30" r="1.2" fill="rgba(255,255,255,0.4)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-overline">Saga Bevcrafts · South Goa, India</div>
+      <h1 class="hero-title">Let's craft your<br><em>dream spirit</em></h1>
+      <p class="hero-sub">Fill this in — it takes under 5 minutes.<br>The more detail you provide, the closer we'll get on the first sample.</p>
+    </div>
+  </div>
+  <div class="hero-stripe"></div>
+</div>
+
+<!-- PROGRESS -->
+<div class="prog-wrap">
+  <div class="prog-inner">
+    <div class="prog-label" id="prog-label">Start below ↓</div>
+    <div class="bar-track"><div class="bar-fill" id="bar"></div></div>
+  </div>
+</div>
+
+<div class="wrap">
+<form id="brief-form">
+
+  <!-- 1. WHO YOU ARE -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div class="sec-info">
+        <div class="sec-title">Who you are</div>
+        <div class="sec-sub">Your company and project details</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="field">
+        <label class="fl">Company / brand name <span class="req">★</span></label>
+        <input type="text" name="brand" placeholder="E.g. Sunset Spirits — or not decided yet" required>
+      </div>
+      <div class="field">
+        <label class="fl">Contact person <span class="req">★</span></label>
+        <input type="text" name="contact" placeholder="Name + phone or email" required>
+      </div>
+      <div class="field">
+        <label class="fl">Target market <span class="req">★</span></label>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="market" value="Goa" id="m1"><label for="m1">Goa</label></label>
+          <label class="chip"><input type="checkbox" name="market" value="All India" id="m2"><label for="m2">All India</label></label>
+          <label class="chip"><input type="checkbox" name="market" value="Export" id="m3"><label for="m3">Export</label></label>
+          <label class="chip"><input type="checkbox" name="market" value="Not decided yet" id="m4"><label for="m4">Not decided yet</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">Price segment <span class="req">★</span></label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="price" value="Entry (under ₹1,500)" id="p1"><label for="p1">Under ₹1,500</label></label>
+          <label class="chip"><input type="radio" name="price" value="Mid (₹1,500–3,000)" id="p2"><label for="p2">₹1,500 – 3,000</label></label>
+          <label class="chip"><input type="radio" name="price" value="Premium (₹3,000–6,000)" id="p3"><label for="p3">₹3,000 – 6,000</label></label>
+          <label class="chip"><input type="radio" name="price" value="Ultra (above ₹6,000)" id="p4"><label for="p4">Above ₹6,000</label></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. WHAT WE'RE MAKING -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div class="sec-info">
+        <div class="sec-title">What we're making</div>
+        <div class="sec-sub">Category and volume</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="field">
+        <label class="fl">Spirit category <span class="req">★</span></label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="category" value="Gin" id="c1"><label for="c1">Gin</label></label>
+          <label class="chip"><input type="radio" name="category" value="Vodka" id="c2"><label for="c2">Vodka</label></label>
+          <label class="chip"><input type="radio" name="category" value="Rum" id="c3"><label for="c3">Rum</label></label>
+          <label class="chip"><input type="radio" name="category" value="Liqueur" id="c4"><label for="c4">Liqueur</label></label>
+          <label class="chip"><input type="radio" name="category" value="Brandy / Fruit Distillate" id="c5"><label for="c5">Brandy</label></label>
+          <label class="chip"><input type="radio" name="category" value="RTD Cocktail" id="c6"><label for="c6">RTD Cocktail</label></label>
+          <label class="chip"><input type="radio" name="category" value="Not sure yet" id="c7"><label for="c7">Not sure yet</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">First batch volume</label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="volume" value="Samples (2 × 500 ml)" id="v1"><label for="v1">Samples (2 × 500 ml)</label></label>
+          <label class="chip"><input type="radio" name="volume" value="500–1,000 L/month" id="v2"><label for="v2">500–1,000 L/mo</label></label>
+          <label class="chip"><input type="radio" name="volume" value="1,000–5,000 L/month" id="v3"><label for="v3">1,000–5,000 L/mo</label></label>
+          <label class="chip"><input type="radio" name="volume" value="Above 5,000 L/month" id="v4"><label for="v4">Above 5,000 L/mo</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">Delivery format</label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="format" value="Ready-to-bottle product" id="f1"><label for="f1">Ready to bottle</label></label>
+          <label class="chip"><input type="radio" name="format" value="Concentrate (client dilutes)" id="f2"><label for="f2">Concentrate</label></label>
+          <label class="chip"><input type="radio" name="format" value="Recipe + Technical Card only" id="f3"><label for="f3">Recipe + Tech Card only</label></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. FLAVOUR -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div class="sec-info">
+        <div class="sec-title">What should it taste like?</div>
+        <div class="sec-sub">Most important section — no need to know all the answers</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="field">
+        <label class="fl">Reference drink</label>
+        <div class="fh">Any spirit you enjoy — or describe a moment when you had something delicious</div>
+        <textarea name="reference" rows="2" placeholder="E.g. 'like Hendrick's but more citrusy' or 'a refreshing G&T at a party' or 'no idea — you suggest'"></textarea>
+      </div>
+      <div class="field">
+        <label class="fl">Main flavour direction <span class="req">★</span></label>
+        <div class="fh">One main note — this becomes the signature of your product</div>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="flavor" value="Citrus (lime, lemon, orange)" id="fl1"><label for="fl1">🍋 Citrus</label></label>
+          <label class="chip"><input type="radio" name="flavor" value="Tropical (mango, passionfruit, coconut)" id="fl2"><label for="fl2">🥭 Tropical</label></label>
+          <label class="chip"><input type="radio" name="flavor" value="Floral (rose, lavender, jasmine)" id="fl3"><label for="fl3">🌸 Floral</label></label>
+          <label class="chip"><input type="radio" name="flavor" value="Spicy (pepper, ginger, cardamom)" id="fl4"><label for="fl4">🌶 Spicy</label></label>
+          <label class="chip"><input type="radio" name="flavor" value="Fruity / Berry" id="fl5"><label for="fl5">🍓 Fruity / Berry</label></label>
+          <label class="chip"><input type="radio" name="flavor" value="Herbal / Botanical" id="fl6"><label for="fl6">🌿 Herbal / Botanical</label></label>
+          <label class="chip"><input type="radio" name="flavor" value="Caramel / Vanilla / Nutty" id="fl7"><label for="fl7">🍯 Caramel / Vanilla</label></label>
+          <label class="chip"><input type="radio" name="flavor" value="No idea — you decide" id="fl8"><label for="fl8">You decide</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">Mouthfeel</label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="body" value="Light / refreshing" id="b1"><label for="b1">Light / refreshing</label></label>
+          <label class="chip"><input type="radio" name="body" value="Medium / balanced" id="b2"><label for="b2">Medium / balanced</label></label>
+          <label class="chip"><input type="radio" name="body" value="Full / rich" id="b3"><label for="b3">Full / rich</label></label>
+          <label class="chip"><input type="radio" name="body" value="Doesn't matter" id="b4"><label for="b4">Doesn't matter</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">Sweetness</label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="sweetness" value="Dry (no sugar)" id="s1"><label for="s1">Dry</label></label>
+          <label class="chip"><input type="radio" name="sweetness" value="Off-dry (slightly sweet)" id="s2"><label for="s2">Off-dry</label></label>
+          <label class="chip"><input type="radio" name="sweetness" value="Sweet" id="s3"><label for="s3">Sweet</label></label>
+          <label class="chip"><input type="radio" name="sweetness" value="Very sweet (liqueur style)" id="s4"><label for="s4">Very sweet</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">What should definitely NOT be there?</label>
+        <div class="fh">"Not bitter", "no juniper", "not too floral" — this is very helpful</div>
+        <textarea name="nogo" rows="2" placeholder="Dislikes and deal-breakers — write anything that comes to mind"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. POSITIONING -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div class="sec-info">
+        <div class="sec-title">Positioning</div>
+        <div class="sec-sub">Optional — helps us nail it on the first sample</div>
+      </div>
+      <div class="sec-tag">Optional</div>
+    </div>
+    <div class="sec-body">
+      <div class="field">
+        <label class="fl">Who is this product for?</label>
+        <div class="fh">"Young crowd in bars", "home sipping", "gifting", "restaurants" — any description</div>
+        <textarea name="audience" rows="2" placeholder="Describe your buyer — age, lifestyle, occasion"></textarea>
+      </div>
+      <div class="field">
+        <label class="fl">Competitors / shelf positioning</label>
+        <textarea name="competitors" rows="2" placeholder="Who will you stand next to? E.g. 'next to Terai but 20% cheaper'"></textarea>
+      </div>
+      <div class="field">
+        <label class="fl">Brand name or concept idea</label>
+        <input type="text" name="concept" placeholder="If you have one — tell us; if not — we'll suggest">
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. TECHNICAL -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div class="sec-info">
+        <div class="sec-title">Technical requirements</div>
+        <div class="sec-sub">Strength, flavourings, special needs</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="field">
+        <label class="fl">Target ABV (alcohol strength)</label>
+        <div class="fh">Low ABV is perfect for liqueurs, RTD cocktails, and aperitifs</div>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="abv" value="5–15% (low — RTD, liqueur, aperitif)" id="a0"><label for="a0">5–15% (RTD / liqueur)</label></label>
+          <label class="chip"><input type="radio" name="abv" value="15–20% (medium — liqueur, cream)" id="a05"><label for="a05">15–20% (cream / liqueur)</label></label>
+          <label class="chip"><input type="radio" name="abv" value="20–30% (fortified style)" id="a06"><label for="a06">20–30% (fortified)</label></label>
+          <label class="chip"><input type="radio" name="abv" value="37–40% (standard spirits)" id="a1"><label for="a1">37–40% (gin / vodka)</label></label>
+          <label class="chip"><input type="radio" name="abv" value="42–43% (standard premium)" id="a2"><label for="a2">42–43% (premium)</label></label>
+          <label class="chip"><input type="radio" name="abv" value="45%+" id="a3"><label for="a3">45%+</label></label>
+          <label class="chip"><input type="radio" name="abv" value="Doesn't matter" id="a4"><label for="a4">Doesn't matter</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">Flavourings</label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="flavoring" value="Natural botanicals only" id="fn1"><label for="fn1">Natural only</label></label>
+          <label class="chip"><input type="radio" name="flavoring" value="Flavourings are fine" id="fn2"><label for="fn2">Flavourings OK</label></label>
+          <label class="chip"><input type="radio" name="flavoring" value="Whatever tastes best" id="fn3"><label for="fn3">Whatever tastes best</label></label>
+          <label class="chip"><input type="radio" name="flavoring" value="Minimum cost priority" id="fn4"><label for="fn4">Minimum cost</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">Special requirements</label>
+        <input type="text" name="special" placeholder="Halal, Vegan, gluten-free, colour, export documentation...">
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. TIMELINE -->
+  <div class="section">
+    <div class="sec-head">
+      <div class="sec-num">06</div>
+      <div class="sec-info">
+        <div class="sec-title">Timeline &amp; budget</div>
+        <div class="sec-sub">When do you need this and what's your budget</div>
+      </div>
+    </div>
+    <div class="sec-body">
+      <div class="field">
+        <label class="fl">When do you need samples?</label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="timeline" value="ASAP" id="t1"><label for="t1">ASAP</label></label>
+          <label class="chip"><input type="radio" name="timeline" value="1–2 weeks" id="t2"><label for="t2">1–2 weeks</label></label>
+          <label class="chip"><input type="radio" name="timeline" value="1 month" id="t3"><label for="t3">1 month</label></label>
+          <label class="chip"><input type="radio" name="timeline" value="Flexible" id="t4"><label for="t4">Flexible</label></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="fl">Development budget</label>
+        <input type="text" name="budget" placeholder="₹ ____ or 'not sure yet' — both are fine">
+      </div>
+      <div class="field">
+        <label class="fl">Comments / ideas / questions</label>
+        <div class="fh">Anything that didn't fit above — all thoughts are welcome</div>
+        <textarea name="comments" rows="4" placeholder="Free comments — the more context, the better the product"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="submit-area">
+    <button type="button" class="btn-main" onclick="generateBrief()">Generate Brief →</button>
+    <div class="btn-note">★ = required &nbsp;·&nbsp; Everything else is optional</div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result-panel">
+    <h3>Your brief is ready</h3>
+    <div id="result-text"></div>
+    <div class="result-actions">
+      <button class="btn-copy" onclick="copyBrief()">Copy to clipboard</button>
+      <div class="result-note">
+        Send via WhatsApp or email to:<br>
+        <strong>info@sagabevcrafts.com</strong>
+      </div>
+    </div>
+  </div>
+
+</form>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">SAGA<span>·</span>BEVCRAFTS</div>
+  <div class="footer-contacts">
+    Adarsh Gadvi — CEO &amp; Director<br>
+    <a href="tel:+919765602050">+91 97656 02050</a> &nbsp;·&nbsp;
+    <a href="mailto:info@sagabevcrafts.com">info@sagabevcrafts.com</a> &nbsp;·&nbsp;
+    <a href="http://www.sagabevcrafts.com" target="_blank">sagabevcrafts.com</a>
+  </div>
+</div>
+
+<script>
+async function submitBrief() {
+  const brand = document.querySelector('[name="brand"]').value.trim();
+  if (!brand) { alert('Please fill in the company / brand name'); return; }
+  
+  generateBriefText();
+  const briefText = document.getElementById('result-text').textContent;
+  const contact = document.querySelector('[name="contact"]').value.trim();
+  
+  document.getElementById('btn-submit').disabled = true;
+  document.getElementById('btn-submit').textContent = 'Sending...';
+  
+  try {
+    const res = await fetch('https://formspree.io/f/mjgdeeng', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        _subject: 'New Brief: ' + brand + ' — Saga Bevcrafts',
+        _replyto: contact.includes('@') ? contact : 'client@sagabevcrafts.com',
+        brand: brand,
+        contact: contact,
+        brief: briefText
+      })
+    });
+    document.getElementById('result-panel').style.display = 'block';
+    document.getElementById('result-panel').scrollIntoView({behavior:'smooth'});
+    document.getElementById('btn-submit').textContent = '✓ Sent!';
+  } catch(e) {
+    document.getElementById('result-panel').style.display = 'block';
+    document.getElementById('result-panel').scrollIntoView({behavior:'smooth'});
+    document.getElementById('btn-submit').disabled = false;
+    document.getElementById('btn-submit').textContent = 'Submit Brief →';
+  }
+}
+
+
+function updateProgress() {
+  const fields = ['price','category','volume','format',
+                  'flavor','body','sweetness','abv','flavoring','timeline'];
+  let total = fields.length + 2, done = 0;
+  fields.forEach(n => {
+    if (document.querySelector(`[name="${n}"]:checked`)) done++;
+  });
+  ['brand','contact'].forEach(n => {
+    const el = document.querySelector(`[name="${n}"]`);
+    if (el && el.value.trim()) done++;
+  });
+  const pct = Math.round((done / total) * 100);
+  document.getElementById('bar').style.width = pct + '%';
+  const lbl = document.getElementById('prog-label');
+  if (pct === 0)     lbl.textContent = 'Start below ↓';
+  else if (pct < 40) lbl.textContent = `${pct}% — keep going`;
+  else if (pct < 80) lbl.textContent = `${pct}% — almost done`;
+  else               lbl.textContent = `${pct}% complete ✓`;
+}
+document.querySelectorAll('input, textarea').forEach(el => {
+  el.addEventListener('change', updateProgress);
+  el.addEventListener('input', updateProgress);
+});
+
+function val(name) {
+  const el = document.querySelector(`[name="${name}"]`);
+  if (!el) return '—';
+  if (el.type === 'radio' || el.type === 'checkbox') {
+    const checked = [...document.querySelectorAll(`[name="${name}"]:checked`)];
+    return checked.length ? checked.map(c => c.value).join(', ') : '—';
+  }
+  return el.value.trim() || '—';
+}
+
+function generateBrief() { generateBriefText(); }
+function generateBriefText() {
+  if (!document.querySelector('[name="brand"]').value.trim()) {
+    alert('Please fill in the company / brand name'); return;
+  }
+  const lines = [
+    '═══════════════════════════════════════════',
+    '   PRODUCT DEVELOPMENT BRIEF',
+    '   Saga Bevcrafts · South Goa, India',
+    '   info@sagabevcrafts.com · sagabevcrafts.com',
+    '═══════════════════════════════════════════',
+    '',
+    '── 01  WHO YOU ARE ─────────────────────────',
+    `Brand:               ${val('brand')}`,
+    `Contact:             ${val('contact')}`,
+    `Market:              ${val('market')}`,
+    `Price segment:       ${val('price')}`,
+    '',
+    `── 02  WHAT WE'RE MAKING ───────────────────`,
+    `Category:            ${val('category')}`,
+    `Volume:              ${val('volume')}`,
+    `Delivery format:     ${val('format')}`,
+    '',
+    '── 03  FLAVOUR ─────────────────────────────',
+    `Reference drink:     ${val('reference')}`,
+    `Main flavour:        ${val('flavor')}`,
+    `Mouthfeel:           ${val('body')}`,
+    `Sweetness:           ${val('sweetness')}`,
+    `Must NOT have:       ${val('nogo')}`,
+    '',
+    '── 04  POSITIONING ─────────────────────────',
+    `Target audience:     ${val('audience')}`,
+    `Competitors:         ${val('competitors')}`,
+    `Concept / name:      ${val('concept')}`,
+    '',
+    '── 05  TECHNICAL ───────────────────────────',
+    `ABV:                 ${val('abv')}`,
+    `Bottle format:       ${val('bottle')}`,
+    `Occasion:            ${val('occasion')}`,
+    `Flavourings:         ${val('flavoring')}`,
+    `Special req.:        ${val('special')}`,
+    '',
+    '── 06  TIMELINE & BUDGET ───────────────────',
+    `Timeline:            ${val('timeline')}`,
+    `Budget:              ${val('budget')}`,
+    `Comments:            ${val('comments')}`,
+    '',
+    '═══════════════════════════════════════════',
+    `Date: ${new Date().toLocaleDateString('en-GB')}`,
+    '═══════════════════════════════════════════',
+  ];
+  document.getElementById('result-text').textContent = lines.join('\n');
+  const panel = document.getElementById('result-panel');
+  panel.style.display = 'block';
+  setTimeout(() => panel.scrollIntoView({ behavior:'smooth', block:'start' }), 100);
+}
+
+function copyBrief() {
+  navigator.clipboard.writeText(document.getElementById('result-text').textContent).then(() => {
+    const btn = document.querySelector('.btn-copy');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = 'Copy to clipboard', 2000);
+  });
+}
+</script>
+</body>
+</html>
