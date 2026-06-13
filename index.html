@@ -612,7 +612,14 @@ input::placeholder, textarea::placeholder {
 
   <!-- SUBMIT -->
   <div class="submit-area">
-    <button type="button" class="btn-main" onclick="generateBrief()">Generate Brief →</button>
+    <button
+  type="button"
+  id="btn-submit"
+  class="btn-main"
+  onclick="submitBriefToSaga()"
+>
+  Submit Brief →
+</button>
     <div class="btn-note">★ = required &nbsp;·&nbsp; Everything else is optional</div>
   </div>
 
@@ -778,5 +785,10 @@ function copyBrief() {
   });
 }
 </script>
-</body>
+<script>
+  window.SAGA_INTAKE_URL =
+    "https://lifomanpnobxqvmykoek.supabase.co/functions/v1/intake-v2";
+</script>
+
+<script src="./saga-submit.js"></script></body>
 </html>
